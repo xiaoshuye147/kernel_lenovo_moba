@@ -230,7 +230,7 @@ void calcupos_thread(struct work_struct *work){
 }
 DECLARE_WORK(cal_work,calcupos_thread);
 
-void step_clk_start()
+void step_clk_start(void)
 {
 
 #ifndef USE_GPIO_CLK
@@ -618,7 +618,7 @@ static int motor_open (struct inode *node, struct file *filp)
     CAM_INFO(CAM_MOTOR,"motor open");
     return 0;
 }
-int LDO_init(){
+int LDO_init(void){
     int ret;
     uint32_t data;
     struct camera_io_master io_master_info;
