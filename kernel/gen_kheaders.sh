@@ -13,7 +13,7 @@ cpio_dir=$outdir/$tarfile.tmp
 # Script filename relative to the kernel source root
 # We add it to the archive because it is small and any changes
 # to this script will also cause a rebuild of the archive.
-sfile="kernel/gen_kheaders.sh"
+sfile="$(realpath --relative-to $kroot "$(readlink -f "$0")")"
 
 src_file_list="
 include/
